@@ -16,11 +16,6 @@ RUN apt-get update && \
     apt-get install -y ca-certificates nginx=${NGINX_VERSION} && \
 	rm -rf /var/lib/apt/lists/*
 
-#RUN add-apt-repository -y ppa:nginx/stable
-#RUN apt-get update && \
-#    apt-get install -y nginx --no-install-recommends && \
-#    rm -rf /var/lib/apt/lists/*
-
 RUN echo "\ndaemon off;" >> /etc/nginx/nginx.conf
 RUN chown -R www-data:www-data /var/lib/nginx
 
